@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <p>
-      <code>Good luck! 🚀</code>
-    </p>
+    <div>
+      <code className="text-3xl font-bold underline">Good luck! 🚀</code>
+    </div>
   );
 }
