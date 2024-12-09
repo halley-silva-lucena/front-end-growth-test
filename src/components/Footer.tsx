@@ -24,7 +24,7 @@ export function Footer({ global, languages }: FooterProps) {
             <Link href="/" className="relative">
               <Image src="assets/logo-moises-developer.svg" alt="Moises" width={158} height={32} />
             </Link>
-            <p className="text-base font-medium text-white text-opacity-40 mt-4">AI Partner for the Music Industry</p>
+            <p className="text-base font-medium text-white text-opacity-40 mt-4">{global.helpText}</p>
             <LanguageDropdown languages={languages} locale={global.locale} />
             <FooterSocial social={global.social} />
           </div>
@@ -37,7 +37,7 @@ export function Footer({ global, languages }: FooterProps) {
 
         <div className="w-full flex flex-col sm:flex-row items-center justify-between mt-12 border-t border-white border-opacity-25 pt-8 gap-4">
           <p className="flex order-2 sm:order-1 w-full sm:w-1/2 text-base font-medium text-white text-opacity-40">
-            © {new Date().getFullYear()} Developer, Inc. All rights reserved.
+            {global.copyright}
           </p>
           <p className="w-full order-1 sm:order-2 sm:w-1/2 text-sm font-medium text-white text-opacity-40 flex items-center grow justify-start sm:justify-end">
             Status

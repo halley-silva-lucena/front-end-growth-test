@@ -15,7 +15,7 @@ export function ModuleCard({ title, description, button }: Omit<any, "id">) {
         {button.text}
         <Image
           className="h-6 w-6 transition-transform group-hover:translate-x-1"
-          src={"assets/ic-arrow-up.svg"}
+          src={"assets/icons/ic-arrow-up.svg"}
           width={24}
           height={24}
           alt={"Arrow Up"}

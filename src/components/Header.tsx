@@ -65,7 +65,7 @@ export const Header = ({ menu, locale }: HeaderProps) => {
         <Logo locale={locale} />
         <NavLinks menu={menu} />
         <Link href="/login" className="hidden md:flex items-center text-white h-12 font-semibold text-base">
-          Login <Image src="/assets/ic-arrow-right.svg" width={24} height={24} alt="Arrow Right" />
+          Login <Image src="/assets/icons/ic-arrow-right.svg" width={24} height={24} alt="Arrow Right" />
         </Link>
         <Image
           className="w-5 cursor-pointer flex md:hidden"
@@ -119,7 +119,7 @@ export const Header = ({ menu, locale }: HeaderProps) => {
           <Link
             href="/login"
             className="flex w-full items-start justify-start text-white h-12 font-semibold text-base mb-12">
-            Login <Image src="/assets/ic-arrow-right.svg" width={24} height={24} alt="Arrow Right" />
+            Login <Image src="/assets/icons/ic-arrow-right.svg" width={24} height={24} alt="Arrow Right" />
           </Link>
         </div>
       </div>

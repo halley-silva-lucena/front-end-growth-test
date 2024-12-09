@@ -34,7 +34,7 @@ export function ModulesHeader({
           onClick={onPrevClick}>
           <Image
             className={`h-11 w-11 p-3`}
-            src={"assets/ic-arrow-left-black.svg"}
+            src={"assets/icons/ic-arrow-left-black.svg"}
             alt={"Arrow Left"}
             width={16}
             height={16}
@@ -46,7 +46,7 @@ export function ModulesHeader({
           disabled={!canScrollNext}>
           <Image
             className="h-11 w-11 p-3"
-            src={"assets/ic-arrow-right-black.svg"}
+            src={"assets/icons/ic-arrow-right-black.svg"}
             alt={"Arrow Right"}
             width={16}
             height={16}
