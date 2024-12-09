@@ -1,11 +1,23 @@
 import Link from "next/link";
 
-export function FooterColumn({ title, links }: any) {
+interface LinkType {
+  id: number;
+  link: string;
+  title: string;
+  openNewWindow?: boolean;
+}
+
+interface FooterColumnProps {
+  title: string;
+  links: LinkType[];
+}
+
+export function FooterColumn({ title, links }: FooterColumnProps) {
   return (
     <div className="w-full sm:w-auto">
       <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.2rem] text-white text-opacity-40">{title}</h3>
       <ul className="space-y-3">
-        {links.map((link: any) => (
+        {links.map((link: LinkType) => (
           <li key={link.id}>
             <Link
               href={link.link}

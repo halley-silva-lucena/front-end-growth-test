@@ -9,13 +9,26 @@ export default function AudioPlayer() {
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [waveformHeights, setWaveformHeights] = useState<number[]>([]);
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWidth(window.innerWidth);
+
+      const handleResize = () => setWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
 
   useEffect(() => {
     // Generate stable waveform heights on client-side only
     const heights = Array.from({ length: width > 500 ? 100 : 40 }, () => Math.floor(Math.random() * 85) + 15);
     setWaveformHeights(heights);
-  }, []);
+  }, [width]);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);

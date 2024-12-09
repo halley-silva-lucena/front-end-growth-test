@@ -11,18 +11,20 @@ interface DropdownProps {
 
 const LanguageDropdown = ({ languages, locale }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<any>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    console.log("Dropdown -> languages", languages);
-  }, [languages]);
+  const handleClickOutside = (event: Event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      closeDropdown();
+    }
+  };
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -30,12 +32,6 @@ const LanguageDropdown = ({ languages, locale }: DropdownProps) => {
 
   const closeDropdown = () => {
     setIsOpen(false);
-  };
-
-  const handleClickOutside = (event: any) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      closeDropdown();
-    }
   };
 
   return (
@@ -58,7 +54,7 @@ const LanguageDropdown = ({ languages, locale }: DropdownProps) => {
                   role="menuitem"
                   onClick={() => {
                     closeDropdown();
-                    lang !== locale ? redirect(`/${lang}`) : null;
+                    if (lang !== locale) redirect(`/${lang}`);
                   }}>
                   {LANGUAGES_NAMES[lang]}
                 </li>

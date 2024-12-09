@@ -8,6 +8,8 @@ export interface Metadata {
 
 export type Params = Promise<{ locale: string }>;
 
+export type Locale = "en" | "pt";
+
 export interface Button {
   id: number;
   appearance: "solid" | "ghost";

@@ -1,7 +1,12 @@
 import Image from "next/image";
-import { FiMonitor, FiMousePointer, FiCode, FiLock, FiPocket, FiZap } from "react-icons/fi";
 
-export function FeatureCard({ title, description, icon }: Omit<any, "id">) {
+interface FeatureCardProps {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export function FeatureCard({ title, description, icon }: FeatureCardProps) {
   return (
     <div className="py-2 px-6 md:py-6 md:px-6">
       <div className="mb-2 flex h-12 items-center justify-start rounded-xl bg-primary/10 text-primary">

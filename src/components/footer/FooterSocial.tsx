@@ -1,14 +1,12 @@
 import { Social } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
-import { FiFacebook, FiInstagram, FiTwitter, FiYoutube, FiLinkedin } from "react-icons/fi";
 
 interface FooterSocialProps {
   social: Social;
 }
 
 export function FooterSocial({ social }: FooterSocialProps) {
-  console.log("FooterSocial -> social", social);
   return (
     <div className="flex space-x-6 text-white text-opacity-40 mt-4">
       <Link href={social.facebook}>

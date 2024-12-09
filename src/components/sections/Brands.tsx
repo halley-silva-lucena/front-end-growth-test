@@ -1,9 +1,10 @@
 "use client";
 
 import { BrandsSection } from "@/lib/types";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
-export function Brands({ theme, brands }: BrandsSection) {
+export function Brands({ brands }: BrandsSection) {
   const duplicatedBrands = [...brands, ...brands];
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -42,8 +43,10 @@ export function Brands({ theme, brands }: BrandsSection) {
           <div
             key={`${brand.id}-${index}`}
             className="h-[50px] mx-8 flex items-center justify-center transition-opacity duration-300 hover:opacity-70">
-            <img
+            <Image
               src={brand.url}
+              width={50}
+              height={50}
               alt={brand.title}
               className="h-full w-auto object-contain grayscale transition-[filter] duration-300 hover:grayscale-0 invert dark:invert-0"
               loading="lazy"

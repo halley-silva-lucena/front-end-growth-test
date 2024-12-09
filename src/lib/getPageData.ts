@@ -5,5 +5,5 @@ export async function getPageData(locale: string = "en"): Promise<Page | undefin
   const pages = await PagesRes.json();
   // console.log("PAGES >>> Data", pages);
 
-  return pages.find((page: any) => page.locale === locale);
+  return pages.find((page: { locale: string }) => page.locale === locale);
 }

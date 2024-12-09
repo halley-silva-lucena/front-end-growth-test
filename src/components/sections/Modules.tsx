@@ -1,12 +1,12 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ModulesSection } from "@/lib/types";
 import { ModulesHeader } from "../ui/ModulesHeader";
 import { ModuleCard } from "../ui/ModuleCard";
 
-export function Modules({ theme, preTitle, title, description, cards }: ModulesSection) {
+export function Modules({ title, description, cards }: ModulesSection) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: false,

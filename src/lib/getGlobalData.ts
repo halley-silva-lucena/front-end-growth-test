@@ -1,9 +1,9 @@
 import { GlobalData } from "@/lib/types";
 import { notFound } from "next/navigation";
-import { LOCALES } from "./constants";
+import { Locale, LOCALES } from "./constants";
 
-export async function getGlobalData(locale: string = "en"): Promise<GlobalData> {
-  if (!LOCALES.includes(locale as any)) {
+export async function getGlobalData(locale: Locale = "en"): Promise<GlobalData> {
+  if (!LOCALES.includes(locale)) {
     return notFound();
   }
 

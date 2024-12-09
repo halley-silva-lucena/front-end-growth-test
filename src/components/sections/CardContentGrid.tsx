@@ -2,7 +2,7 @@ import { CardContentGridSection } from "@/lib/types";
 import React from "react";
 import { FeatureCard } from "../ui/FeatureCard";
 
-export const CardContentGrid = ({ theme, preTitle, title, description, cards }: CardContentGridSection) => {
+export const CardContentGrid = ({ preTitle, title, description, cards }: CardContentGridSection) => {
   // console.log("CardContentGrid -> cards", cards);
   return (
     <section className="max-w-7xl mx-auto flex flex-col justify-center items-center z-10 py-8 md:py-24">

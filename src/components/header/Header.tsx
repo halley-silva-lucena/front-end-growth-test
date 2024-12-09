@@ -90,7 +90,7 @@ export const Header = ({ menu, locale }: HeaderProps) => {
             />
           </div>
           <div className="flex w-full flex-col h-full grow items-start justify-start mt-8">
-            {menu.slice(0, -1).map((item, index) => (
+            {menu.slice(0, -1).map((item) => (
               <div key={item.id} className={`relative mb-2`}>
                 {item.link ? (
                   <Link

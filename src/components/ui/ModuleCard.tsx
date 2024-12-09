@@ -2,9 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowRight } from "react-icons/fi";
 
-export function ModuleCard({ title, description, button }: Omit<any, "id">) {
+interface ModuleCardProps {
+  title: string;
+  description: string;
+  button: {
+    text: string;
+    url: string;
+  };
+}
+
+export function ModuleCard({ title, description, button }: ModuleCardProps) {
   return (
     <div className="flex h-full flex-col rounded-lg bg-[#212121] p-6">
       <h3 className="mb-2 text-xl font-semibold text-white">{title}</h3>

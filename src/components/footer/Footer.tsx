@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FiMusic } from "react-icons/fi";
 import { GlobalData, MenuItem } from "@/lib/types";
 import { FooterColumn } from "./FooterColumn";
 import Image from "next/image";
@@ -29,7 +28,7 @@ export function Footer({ global, languages }: FooterProps) {
             <FooterSocial social={global.social} />
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3 xl:col-span-3 xl:mt-0">
-            {global.footerMenu.map((menu: any) => (
+            {global.footerMenu.map((menu: MenuItem) => (
               <FooterColumn key={menu.id} title={menu.title} links={menu.dropdown} />
             ))}
           </div>
