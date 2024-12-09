@@ -1,7 +1,6 @@
+import { redirect } from "next/navigation";
+import { DEFAULT_LOCALE } from "@/lib/constants";
+
 export default function Home() {
-  return (
-    <div>
-      <code className="text-3xl font-bold underline">Good luck! 🚀</code>
-    </div>
-  );
+  redirect(`/${DEFAULT_LOCALE}`);
 }

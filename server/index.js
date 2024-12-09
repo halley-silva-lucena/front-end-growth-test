@@ -17,7 +17,7 @@ const server = http.createServer((req, res) => {
 
   const parsedUrl = url.parse(req.url, true);
   const locale = parsedUrl.query.locale;
-
+  
   let data = [];
 
   if (req.url.startsWith("/global")) {
@@ -26,6 +26,16 @@ const server = http.createServer((req, res) => {
 
   if (req.url.startsWith("/pages")) {
     data = filterByLocale(payload.pages, locale);
+  }
+
+  if (req.url.startsWith("/languages")) {
+    const locales = [];
+    payload.pages.forEach(item => {
+      if (item.locale) {
+        locales.push(item.locale);
+      }
+    });
+    data = locales
   }
 
   res.end(JSON.stringify(data));
