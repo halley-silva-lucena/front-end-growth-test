@@ -1,4 +1,4 @@
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { getPageData } from "@/lib/getPageData";
 import { Params } from "@/lib/types";
 import { LOCALES } from "@/lib/constants";
@@ -22,10 +22,7 @@ export function generateStaticParams() {
 
 export default async function Page({ params }: { params: Params }) {
   const { locale } = await params;
-
   const pageData = await getPageData(locale);
-
-  // console.log("Page -> pageData", pageData);
 
   if (!pageData) {
     notFound();

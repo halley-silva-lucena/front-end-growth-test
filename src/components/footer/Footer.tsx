@@ -2,10 +2,10 @@ import Link from "next/link";
 import { FiMusic } from "react-icons/fi";
 import { GlobalData, MenuItem } from "@/lib/types";
 import { FooterColumn } from "./FooterColumn";
-import { FooterSocial } from "./FooterSocial";
 import Image from "next/image";
 import LanguageDropdown from "./LanguageDropdown";
 import { FaCircle } from "react-icons/fa";
+import { FooterSocial } from "./FooterSocial";
 
 interface FooterProps {
   global: GlobalData;

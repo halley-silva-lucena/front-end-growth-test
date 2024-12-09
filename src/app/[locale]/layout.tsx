@@ -1,7 +1,7 @@
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { LOCALES } from "@/lib/constants";
-import { getGlobalData, getLanguageData } from "@/lib/getGlobalData";
+import { Footer } from "@/components/footer/Footer";
+import { Header } from "@/components/header/Header";
+import { getGlobalData } from "@/lib/getGlobalData";
+import { getLanguageData } from "@/lib/getLanguageData";
 import { Params } from "@/lib/types";
 import { Metadata } from "next";
 
@@ -13,18 +13,12 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Params }) {
   const { locale } = await params;
-
-  // const locale = LOCALES.includes(params.locale as any) ? params.locale : LOCALES[0];
   const globalData = await getGlobalData(locale);
-
   const langData = await getLanguageData();
 
-  // console.log("GLOBAL >>> Data", globalData);
   globalData.metadata.metaTitle && (metadata.title = globalData.metadata.metaTitle);
   globalData.metadata.metaDescription && (metadata.description = globalData.metadata.metaDescription);
   globalData.metadata.robots && (metadata.robots = globalData.metadata.robots);
-
-  // console.log("LANG >>> Data", langData);
 
   return (
     <div className="flex min-h-screen flex-col">
